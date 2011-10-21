@@ -15,5 +15,10 @@ namespace app.infrastructure.containers.simple
         {
             return creation_delegate();
         }
+
+        public void as_singleton()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -22,5 +22,10 @@ namespace app.infrastructure.containers.simple
             var parameters = ctor.GetParameters().Select(x => container.an(x.ParameterType));
             return ctor.Invoke(parameters.ToArray());
         }
+
+        public void as_singleton()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

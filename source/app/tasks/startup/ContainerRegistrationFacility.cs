@@ -19,10 +19,11 @@ namespace app.tasks.startup
             Add(typeof(Contract), dependency_factories_factory.create_for_instance(instance));
         }
 
-        public void register<Contract, Implementation>() where Implementation : Contract
+        public ICreateASingleDependency register<Contract, Implementation>() where Implementation : Contract
         {
-            Add(typeof(Contract),
-                dependency_factories_factory.create_for_automatic_wiring<Implementation>());
+            ICreateASingleDependency dependency_factory = dependency_factories_factory.create_for_automatic_wiring<Implementation>();
+            Add(typeof(Contract), dependency_factory);
+            return dependency_factory;
         }
 
         public void register<Contract>()

@@ -3,5 +3,7 @@
     public interface ICreateASingleDependency
     {
         object create();
+
+        void as_singleton();
     }
 }
